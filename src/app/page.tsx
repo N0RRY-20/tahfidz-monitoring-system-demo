@@ -5,8 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useSession } from "@/lib/auth-client";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { ModeToggle } from "@/components/mode-toggle";
 import {
   Accordion,
@@ -269,32 +267,116 @@ export default function Home() {
                       <DialogHeader>
                         <DialogTitle>Akses Akun Demo</DialogTitle>
                         <DialogDescription>
-                          Gunakan kredensial berikut untuk mencoba fitur lengkap
-                          sebagai Admin.
+                          Gunakan kredensial berikut untuk mencoba fitur
+                          aplikasi.
                         </DialogDescription>
                       </DialogHeader>
-                      <div className="flex flex-col space-y-4 py-4">
-                        <div className="space-y-2">
-                          <Label>Email</Label>
-                          <div className="relative">
-                            <Input
-                              readOnly
-                              value="admin@example.com"
-                              className="pr-10 bg-muted/50 font-mono"
-                            />
-                            <CopyButton value="admin@example.com" />
+                      <div className="flex flex-col space-y-4 py-4 max-h-[60vh] overflow-y-auto">
+                        {/* Admin Account */}
+                        <div className="p-4 rounded-lg bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800">
+                          <div className="flex items-center gap-2 mb-3">
+                            <div className="h-8 w-8 rounded-full bg-amber-500 flex items-center justify-center">
+                              <User className="h-4 w-4 text-white" />
+                            </div>
+                            <span className="font-semibold text-amber-700 dark:text-amber-300">
+                              Admin
+                            </span>
+                          </div>
+                          <div className="space-y-2 text-sm">
+                            <div className="flex items-center justify-between">
+                              <span className="text-muted-foreground">
+                                Email:
+                              </span>
+                              <div className="flex items-center gap-1">
+                                <code className="bg-background px-2 py-0.5 rounded text-xs">
+                                  admin@example.com
+                                </code>
+                                <CopyButton value="admin@example.com" />
+                              </div>
+                            </div>
+                            <div className="flex items-center justify-between">
+                              <span className="text-muted-foreground">
+                                Password:
+                              </span>
+                              <div className="flex items-center gap-1">
+                                <code className="bg-background px-2 py-0.5 rounded text-xs">
+                                  password123
+                                </code>
+                                <CopyButton value="password123" />
+                              </div>
+                            </div>
                           </div>
                         </div>
-                        <div className="space-y-2">
-                          <Label>Password</Label>
-                          <div className="relative">
-                            <Input
-                              readOnly
-                              value="password"
-                              type="text"
-                              className="pr-10 bg-muted/50 font-mono"
-                            />
-                            <CopyButton value="password" />
+
+                        {/* Guru Account */}
+                        <div className="p-4 rounded-lg bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800">
+                          <div className="flex items-center gap-2 mb-3">
+                            <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center">
+                              <BookOpen className="h-4 w-4 text-white" />
+                            </div>
+                            <span className="font-semibold text-blue-700 dark:text-blue-300">
+                              Guru Tahfidz
+                            </span>
+                          </div>
+                          <div className="space-y-2 text-sm">
+                            <div className="flex items-center justify-between">
+                              <span className="text-muted-foreground">
+                                Email:
+                              </span>
+                              <div className="flex items-center gap-1">
+                                <code className="bg-background px-2 py-0.5 rounded text-xs">
+                                  ustadz.rizki@ponpes.id
+                                </code>
+                                <CopyButton value="ustadz.rizki@ponpes.id" />
+                              </div>
+                            </div>
+                            <div className="flex items-center justify-between">
+                              <span className="text-muted-foreground">
+                                Password:
+                              </span>
+                              <div className="flex items-center gap-1">
+                                <code className="bg-background px-2 py-0.5 rounded text-xs">
+                                  password123
+                                </code>
+                                <CopyButton value="password123" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Santri Account */}
+                        <div className="p-4 rounded-lg bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800">
+                          <div className="flex items-center gap-2 mb-3">
+                            <div className="h-8 w-8 rounded-full bg-emerald-500 flex items-center justify-center">
+                              <User className="h-4 w-4 text-white" />
+                            </div>
+                            <span className="font-semibold text-emerald-700 dark:text-emerald-300">
+                              Santri
+                            </span>
+                          </div>
+                          <div className="space-y-2 text-sm">
+                            <div className="flex items-center justify-between">
+                              <span className="text-muted-foreground">
+                                Email:
+                              </span>
+                              <div className="flex items-center gap-1">
+                                <code className="bg-background px-2 py-0.5 rounded text-xs">
+                                  santri1@ponpes.id
+                                </code>
+                                <CopyButton value="santri1@ponpes.id" />
+                              </div>
+                            </div>
+                            <div className="flex items-center justify-between">
+                              <span className="text-muted-foreground">
+                                Password:
+                              </span>
+                              <div className="flex items-center gap-1">
+                                <code className="bg-background px-2 py-0.5 rounded text-xs">
+                                  password123
+                                </code>
+                                <CopyButton value="password123" />
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
